@@ -1,0 +1,51 @@
+[
+      {
+        "name": "Griffin",
+        "type": "Mammal",
+        "color": "Red",
+        "description": "a legendary creature with the body, tail, and back legs of a lion, and the head and wings of an eagle with its talons on the front legs.",
+        "yearOfBirth": 1275
+    },
+    {
+        "name": "Lion",
+        "type": "Mammal",
+        "color": "Golden",
+        "description": "The lion is a species in the family Felidae and a member of the genus Panthera.",
+        "yearOfBirth": 2015
+    },
+    {
+        "name": "Elephant",
+        "type": "Mammal",
+        "color": "Gray",
+        "description": "Elephants are large mammals of the family Elephantidae and the order Proboscidea.",
+        "yearOfBirth": 2010
+    },
+    {
+        "name": "Zebra",
+        "type": "Mammal",
+        "color": "Black and White",
+        "description": "Zebras are African equines with distinctive black-and-white striped coats.",
+        "yearOfBirth": 2018
+    },
+    {
+        "name": "Giraffe",
+        "type": "Mammal",
+        "color": "Spotted",
+        "description": "The giraffe is the tallest living terrestrial animal and the largest ruminant.",
+        "yearOfBirth": 2016
+    },
+    {
+        "name": "Penguin",
+        "type": "Bird",
+        "color": "Black and White",
+        "description": "Penguins are a group of aquatic flightless birds living almost exclusively in the Southern Hemisphere.",
+        "yearOfBirth": 2019
+    },
+    {
+        "name": "Crocodile",
+        "type": "Reptile",
+        "color": "Green",
+        "description": "Crocodiles are large aquatic reptiles that live throughout the tropics in Africa, Asia, the Americas, and Australia.",
+        "yearOfBirth": 2012
+    }
+]

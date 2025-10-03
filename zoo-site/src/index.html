@@ -1,0 +1,39 @@
+<!-- Use semantic HTML (`header`, `nav`, `aside`, `main`, `article`, `figure`, `footer`),  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skånska Zoo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Skånska Zoo / Välkommen till Skånska djurparken</h1>
+        <nav>
+            <ul>
+                <li><a href="#animals">Our Animals / vår djur</a></li>
+                <li><a href="#about">About Us / om oss</a></li>
+                <li><a href="#contact">Contact / Kontakta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <h2>Filter Animals / Filtrera djur</h2>
+        <input type="text" id="search" placeholder="Search for animals...">
+    </aside>
+    <main>
+        <section id="animals">
+            <h2>Our Animals</h2>
+            <div class="animal-cards">
+                <!-- Animal cards will be dynamically generated here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Skånska Zoo. All kids are for free, welcome./ Alla barn är gratis, välkomna.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

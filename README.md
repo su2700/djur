@@ -49,3 +49,54 @@ Använd semantisk HTML (`header`, `nav`, `aside`, `main`, `article`, `figure`, `
 - Modal istället för alert (men alert är tillräckligt)  
 - Separata filer för HTML / CSS / JS  
 - Bra bilder/bakgrund (Unsplash eller egna resurser)  
+
+
+# Overview
+
+Create a responsive single-page site for a fictional zoo that presents animals.  
+Use semantic HTML (`header`, `nav`, `aside`, `main`, `article`, `figure`, `footer`), CSS Grid or Flexbox for layout (**no frameworks**), and a bit of JavaScript to show more info via `alert()`.
+
+# Learning Goals
+
+- Practice semantic HTML and accessible structure  
+- Build responsive layouts with CSS Grid/Flexbox  
+- Implement simple client-side filtering/search and UI interactions with JavaScript  
+- Organize files and code for clarity and maintainability  
+
+# Must-Have Requirements (Pass Criteria)
+
+- **Header with navigation** (`<header>` + `<nav>`)  
+- **Left column** (`<aside>`) for filtering/sorting/search (at minimum: a search input)  
+- **Right main area** (`<main>`) showing all animal cards  
+
+### Responsive behavior
+- **Mobile:** animal cards stacked vertically (1 column)  
+- **Large screens:** animals displayed in rows with **four animals per row**  
+
+### Animal data model (each animal has)
+- Name  
+- Type  
+- Color  
+- Description  
+- Year of birth  
+
+### Interaction
+- A “More info” control that uses `alert()` to present additional information  
+
+### Semantics & accessibility
+- Proper HTML tags  
+- `alt` text for images  
+- Logical heading order  
+- Basic ARIA attributes where appropriate  
+
+### Restrictions
+- **No frameworks** (e.g., Bootstrap). Use only plain HTML/CSS/JS.  
+
+# Nice-to-Have (Optional)
+
+- Search as-you-type (debounced)  
+- Sort options (name/year)  
+- Keyboard focus styles, skip link, and meaningful ARIA roles/labels  
+- Modal instead of alert (but alert is acceptable)  
+- Separate files for HTML / CSS / JS  
+- Good images/background (Unsplash or local assets)  
