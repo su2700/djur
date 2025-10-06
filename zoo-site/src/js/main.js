@@ -1,30 +1,81 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('data/animals.json') //use fetch to get the JSON data
-        .then(response => response.json()) //parse the JSON data
+    let allAnimals = [];
+
+    fetch('data/animals.json')
+        .then(response => response.json())
         .then(animals => {
-            displayAnimals(animals); //display the animals on the page
+            allAnimals = animals;
+            displayAnimals(allAnimals);
+            setupSearch(allAnimals);
         })
         .catch(error => console.error('Error loading animal data:', error));
 });
 
-function displayAnimals(animals) { //function to display animals
-    const main = document.querySelector('main'); //select the main element
+function displayAnimals(animals) {
+    const cardsContainer = document.querySelector('.animal-cards');
+    if (!cardsContainer) return;
+    cardsContainer.innerHTML = '';
+
     animals.forEach(animal => {
-        const article = document.createElement('article'); //create an article element for each animal
-        article.innerHTML = `  
+        const article = document.createElement('article');
+        const imageSrc = generateImagePathFromName(animal.name);
+        article.innerHTML = `
             <figure>
-                <img src="${animal.image}" alt="${animal.name}">
+                <img src="${imageSrc}" alt="${animal.name}" onerror="this.onerror=null;this.src='images/griffin.jpg'">
                 <figcaption>${animal.name}</figcaption>
             </figure>
+            <h3>${animal.name}</h3>
             <p>Type: ${animal.type}</p>
             <p>Color: ${animal.color}</p>
-            <button onclick="showMoreInfo('${animal.name}', '${animal.description}')">More info</button>
+            <p>Year of Birth: ${animal.yearOfBirth ?? ''}</p>
+            <button type="button" onclick="showMoreInfo('${escapeForAttr(animal.name)}', '${escapeForAttr(animal.description)}')">More info</button>
         `;
-        main.appendChild(article);
+        cardsContainer.appendChild(article);
     });
 }
 
-function showMoreInfo(name, description) { //function to show more info about the animal
-    alert(`More info about ${name}: ${description}`); //alert() here
+function setupSearch(allAnimals) {
+    const searchInput = document.getElementById('search');
+    if (!searchInput) return;
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        if (!query) {
+            displayAnimals(allAnimals);
+            return;
+        }
+        const filtered = allAnimals.filter(animal => {
+            const haystack = [
+                animal.name,
+                animal.type,
+                animal.color,
+                animal.description,
+                String(animal.yearOfBirth)
+            ].filter(Boolean).join(' ').toLowerCase();
+            return haystack.includes(query);
+        });
+        displayAnimals(filtered);
+    });
+}
+
+function showMoreInfo(name, description) {
+    alert(`More info about ${name}: ${description}`);
+}
+
+function escapeForAttr(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/\"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+function generateImagePathFromName(name) {
+    const slug = String(name)
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    return `images/${slug}.jpg`;
 }
