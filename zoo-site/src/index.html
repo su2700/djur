@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- This is the main header ,element represents introductory content,-->
     <header>
         <h1>Welcome to Skånska Zoo / Välkommen till Skånska djurparken</h1>
+        <!-- This is the nav, purpose is to provide navigation -->
         <nav>
             <ul>
                 <li><a href="#animals">Our Animals / vår djur</a></li>
@@ -19,18 +21,34 @@
             </ul>
         </nav>
     </header>
+    <!-- aside, represents a portion of a document whose content is only indirectly related to the document's main content. -->
     <aside>
         <h2>Filter Animals / Filtrera djur</h2>
         <input type="text" id="search" placeholder="Search for animals...">
     </aside>
+    <!--main here, represents the dominant content of the <body> of a document. -->
     <main>
         <section id="animals">
             <h2>Our Animals</h2>
             <div class="animal-cards">
-                <!-- Animal cards will be dynamically generated here -->
+                <!-- article,  represents a self-contained composition in a document, page, application, or site,-->
+                <article>
+                    <figure>
+                        <img src="..." alt="..." />
+                        <figcaption>Animal Name</figcaption>
+                        <!-- figure,  represents self-contained content,  -->
+                    </figure>
+                    <h3>Animal Name</h3>
+                    <p>Type: ...</p>
+                    <p>Color: ...</p>
+                    <p>Year of Birth: ...</p>
+                    <button>More info</button>
+                </article>
+                <!-- More <article> elements for other animals -->
             </div>
         </section>
     </main>
+    <!--footer,  nearest ancestor sectioning content or sectioning root element. -->
     <footer>
         <p>&copy; 2025 Skånska Zoo. All kids are for free, welcome./ Alla barn är gratis, välkomna.</p>
     </footer>
